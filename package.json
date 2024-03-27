@@ -2,9 +2,10 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "f8",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "nodemon --inspect index.js",
+    "start": "nodemon --inspect src/index.js",
+    "watch": "node-sass --watch src/resources/scss --output src/public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,9 +22,15 @@
   },
   "homepage": "https://github.com/manle423/nodejs_f8#readme",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2"
   },
   "devDependencies": {
+    "//": "Morgan de ghi log",
+    "morgan": "^1.10.0",
+    "//": "Them scss",
+    "node-sass": "^9.0.0",
+    "//": "Them nodemon de restart server moi khi co su thay doi",
     "nodemon": "^3.1.0"
   }
 }

@@ -4,9 +4,16 @@
   "description": "f8",
   "main": "src/index.js",
   "scripts": {
+    "format": "lint-staged",
     "start": "nodemon --inspect src/index.js",
     "watch": "node-sass --watch src/resources/scss --output src/public/css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "repository": {
     "type": "git",
@@ -21,16 +28,19 @@
     "url": "https://github.com/manle423/nodejs_f8/issues"
   },
   "homepage": "https://github.com/manle423/nodejs_f8#readme",
+  "lint-staged": {
+    "src/**/*.{js,scss,json}": "prettier --write --single-quote --trailing-comma all"
+  },
   "dependencies": {
     "express": "^4.19.2",
     "express-handlebars": "^7.1.2"
   },
   "devDependencies": {
-    "//": "Morgan de ghi log",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.2",
     "morgan": "^1.10.0",
-    "//": "Them scss",
     "node-sass": "^9.0.0",
-    "//": "Them nodemon de restart server moi khi co su thay doi",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5"
   }
 }

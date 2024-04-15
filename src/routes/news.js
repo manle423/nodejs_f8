@@ -7,5 +7,4 @@ router.use('/:slug', NewsController.show);
 
 router.use('/', NewsController.index);
 
-
-module.exports = router
+module.exports = router;
